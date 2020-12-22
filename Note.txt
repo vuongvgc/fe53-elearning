@@ -1,0 +1,8 @@
+src
+  - components: folder chứa các component dùng chung cho toàn bộ ứng dụng: Button, Card, Sidebar, Header,...
+  - pages: folder chứa các trang của ứng dụng: HomePage, MovieDetail, Checkout, Login,...
+  - styles: Để file css, scss vào đây
+  - constants: folder chứa constants type của action
+  - actions: folder chứa các hàm action
+  - reducers: folder chứa các reducer
+  - ultils: folder chứa các file tạo các hàm để có thể tái sử dụng
