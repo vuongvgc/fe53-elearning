@@ -4,9 +4,15 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CourseList from "./pages/CourseList";
 import CourseDetail from "./pages/CourseDetail";
+import UsersManagement from "./pages/UsersManagement";
 
+// Layout
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
+import AdminLayout from "./layouts/AdminLayout";
+
+// Guard
+import AdminRoute from "./guards/AdminRoute";
 
 function App() {
   return (
@@ -59,6 +65,28 @@ function App() {
               <Route exact path="/register" component={Register} />
             </Switch>
           </AuthLayout>
+        </Route>
+
+        <Route exact path={["/admin/users"]}>
+          <AdminLayout>
+            <Switch>
+              {/* <Route path="/admin/users" component={UsersManagement} /> */}
+              {/* private router */}
+              {/* <Route
+                path="/admin/users"
+                render={(props) => {
+                  const maLoaiNguoiDung = "HV";
+
+                  if (maLoaiNguoiDung !== "GV") {
+                    return <Redirect to="/" />;
+                  }
+
+                  return <UsersManagement />;
+                }}
+              /> */}
+              <AdminRoute path="/admin/users" component={UsersManagement} />
+            </Switch>
+          </AdminLayout>
         </Route>
 
         {/* 2 cách sử lý khi url không hợp lệ */}

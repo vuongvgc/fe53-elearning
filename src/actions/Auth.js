@@ -13,6 +13,8 @@ export const login = (values) => {
         values
       )
       .then((result) => {
+        // Lưu thông tin user xuống localStorage
+        localStorage.setItem("user", JSON.stringify(result.data));
         dispatch({
           type: LOGIN_SUCCESS,
           payload: {
@@ -21,10 +23,11 @@ export const login = (values) => {
         });
       })
       .catch((error) => {
+        console.log(error.response.data);
         dispatch({
           type: LOGIN_FAIL,
           payload: {
-            error: error.data.message,
+            error: error.response.data,
           },
         });
       });

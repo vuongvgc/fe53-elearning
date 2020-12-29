@@ -5,6 +5,9 @@ export default class HomePage extends Component {
     return (
       <div>
         <p>Đây là HomePage</p>
+        <button onClick={() => this.props.history.push("/admin/users")}>
+          Admin
+        </button>
       </div>
     );
   }
