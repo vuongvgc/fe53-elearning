@@ -8,6 +8,8 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
 
+// import Hooks from "./playground/Hooks";
+
 const enhanced = compose(
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -19,6 +21,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
+  // <Hooks />,
   document.getElementById("root")
 );
 
