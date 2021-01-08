@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import rootReducer from "./reducers";
 
 // import Hooks from "./playground/Hooks";
+import DemoUseMemo from "./playground/Hooks/DemoUseMemo";
 
 const enhanced = compose(
   applyMiddleware(thunk),
@@ -18,10 +19,10 @@ const enhanced = compose(
 const store = createStore(rootReducer, enhanced);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  // <Hooks />,
+  // <Provider store={store}>
+  //   <App />
+  // </Provider>,
+  <DemoUseMemo />,
   document.getElementById("root")
 );
 

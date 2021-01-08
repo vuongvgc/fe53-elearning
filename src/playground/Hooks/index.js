@@ -82,17 +82,3 @@ export default function Hooks() {
     </div>
   );
 }
-
-class HooksClass extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      isActive: false,
-    };
-  }
-
-  render() {
-    return <div></div>;
-  }
-}
